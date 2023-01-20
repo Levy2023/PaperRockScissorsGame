@@ -52,7 +52,7 @@ public class GameHelper {
         if (playerGesture.equalsIgnoreCase(computerGesture.name())) {
             tie++;
             System.out.println("It's tie!");
-        } else if ((GestureType.valueOf(playerGesture) == GestureType.PAPER.)
+        } else if ((GestureType.valueOf(playerGesture) == GestureType.PAPER)
                 && (computerGesture.equals(GestureType.ROCK))
                     || (GestureType.valueOf(playerGesture) == GestureType.ROCK)
                 && (computerGesture.equals(GestureType.SCISSORS))
