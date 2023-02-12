@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class GameHelper {
 
     private GestureType computerGesture;
-    private String playerGesture = "Yes";
+    private String playerGesture = "";
     private int tie = 0;
     private int computerCounter = 0;
     private int playerCounter = 0;
@@ -12,38 +12,8 @@ public class GameHelper {
     public GameHelper() {
     }
 
-
     public void showWelcomeScreen() {
         System.out.println("Welcome in Paper, Rock, Scissors Game! \n");
-    }
-
-    public void showEndingQuestion(){
-        System.out.println("Play again? Enter Yes or No");
-    }
-
-    public boolean isEndingTheGameCorrect() {
-        if (playerGesture.equals("YES") || (playerGesture.equals("NO"))) {
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    public boolean isGameOver() {
-        if (playerGesture.equals("NO")) {
-            gameOver = true;
-            showResults();
-        } return gameOver;
-
-    }
-
-    public void showResults() {
-        System.out.println();
-        System.out.println("Results");
-        System.out.println("-------------------------------------");
-        System.out.println("You win: " + playerCounter + " times.");
-        System.out.println("Computer wins: " + computerCounter + " times.");
-        System.out.println("Tie: " + tie);
     }
 
     public void setComputerGesture() {
@@ -56,22 +26,20 @@ public class GameHelper {
         playerGesture = scanner.nextLine().toUpperCase();
     }
 
-
     public boolean isPlayerGestureValid() {
-            if (playerGesture.equals(GestureType.PAPER.toString())
-            || (playerGesture.equals(GestureType.ROCK.toString()))
-            || (playerGesture.equals(GestureType.SCISSORS.toString()))) {
-                return true;
-            }else {
-                System.out.println("Wrong gesture!");
-                return false;
+        if (playerGesture.equals(GestureType.PAPER.toString())
+                || (playerGesture.equals(GestureType.ROCK.toString()))
+                || (playerGesture.equals(GestureType.SCISSORS.toString()))) {
+            return true;
+        } else {
+            return false;
         }
     }
 
     public void showChoseGestures() {
         System.out.println();
         System.out.println("You choose: " + playerGesture);
-        System.out.println("Computer choose: " + computerGesture +"\n");
+        System.out.println("Computer choose: " + computerGesture + "\n");
     }
 
     public void checkTheAnswers() {
@@ -85,12 +53,43 @@ public class GameHelper {
                 || (GestureType.valueOf(playerGesture) == GestureType.SCISSORS)
                 && (computerGesture.equals(GestureType.PAPER))) {
             playerCounter++;
-            System.out.println("You WIN!");
+            System.out.println("YOU WON! Bravo!\n");
         } else {
             computerCounter++;
-            System.out.println("You Lost :P");
+            System.out.println("You lost :P \n");
         }
     }
 
+    public boolean isGameOver() {
+        if (playerGesture.equals("NO")) {
+            gameOver = true;
+        }
+        return gameOver;
 
+    }
+
+    public boolean isEndingTheGameCorrect() {
+        if (playerGesture.equals("YES") || (playerGesture.equals("NO"))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void showEndingQuestion() {
+        System.out.println("Play again? Enter Yes or No");
+    }
+
+    public void showResults() {
+        System.out.println();
+        System.out.println("Results");
+        System.out.println("-------------------------------------");
+        System.out.println("You win: " + playerCounter + " times.");
+        System.out.println("Computer wins: " + computerCounter + " times.");
+        System.out.println("Tie: " + tie);
+    }
+
+    public void endingMessage() {
+        System.out.println(" Thank you for the game. See you next time.");
+    }
 }

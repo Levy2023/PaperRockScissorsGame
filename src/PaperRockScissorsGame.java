@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class PaperRockScissorsGame {
 
     public static void main(String[] args) {
@@ -7,6 +5,5 @@ public class PaperRockScissorsGame {
         Setup setup = new Setup();
         setup.start();
         setup.finish();
-
     }
 }
