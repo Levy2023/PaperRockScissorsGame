@@ -87,9 +87,10 @@ public class GameHelper {
         System.out.println("You win: " + playerCounter + " times.");
         System.out.println("Computer wins: " + computerCounter + " times.");
         System.out.println("Tie: " + tie);
+        System.out.println();
     }
 
     public void endingMessage() {
-        System.out.println(" Thank you for the game. See you next time.");
+        System.out.println("Thank you for the game. See you next time.");
     }
 }
