@@ -31,6 +31,7 @@ public class GameHelper {
 
     public boolean isGameOver() {
         if (playerGesture.equals("NO")) {
+            gameOver = true;
             showResults();
         } return gameOver;
 
